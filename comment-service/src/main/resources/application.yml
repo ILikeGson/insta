@@ -1,0 +1,40 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: comment-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/comments
+    username: postgres
+    password: 251084
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        generate_statistics: true
+        show_sql: true
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: true
+        jdbc:
+          batch_size: 50
+          lob:
+            non_contextual_creation: true
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: false
+    service-url:
+      defaultUrl: http://localhost:8761
+
+logging:
+  level:
+    org:
+      springframework: INFO

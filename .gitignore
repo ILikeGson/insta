@@ -1,0 +1,5 @@
+# Project exclude paths
+/comment-service/target/
+/discovery-service/target/
+/post-service/target/
+/user-service/target/
